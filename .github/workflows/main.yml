@@ -20,7 +20,7 @@ jobs:
 
     - name: Deploy to cPanel
       run: |
-        ssh -o StrictHostKeyChecking=no qqvtsw3ivn6o@admiralbetbgpartners.com << 'EOF'
+        ssh -T -o StrictHostKeyChecking=no qqvtsw3ivn6o@admiralbetbgpartners.com << 'EOF'
           cd /home/qqvtsw3ivn6o/public_html/admiralbetbgpartners.com
           git pull origin main
         EOF
