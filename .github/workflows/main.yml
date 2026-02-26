@@ -1,0 +1,26 @@
+name: Deploy to cPanel via SSH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to cPanel
+      run: |
+        ssh -o StrictHostKeyChecking=no qqvtsw3ivn6o@admiralbetbgpartners.com << 'EOF'
+          cd /home/qqvtsw3ivn6o/public_html/admiralbetbgpartners.com
+          git pull origin main
+        EOF
