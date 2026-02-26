@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdmiralBet | Affiliate Portal</title>
+<title>Affiliate Portal</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -13,239 +13,111 @@
   --bg-1:#060A18;
   --bg-2:#0B1026;
 
-  --surface: rgba(12, 18, 45, .88);
-  --surface-2: rgba(9, 14, 36, .8);
-  --border: rgba(120,150,255,.12);
+  --surface: rgba(12,18,45,.9);
+  --border: rgba(255,204,0,.25);
 
-  --text:#EAF0FF;
-  --muted:rgba(234,240,255,.72);
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.7);
 
-  --accent:#22C55E;
-  --accent-2:#16A34A;
-  --focus:rgba(80,120,255,.35);
+  --yellow:#FFCC00;
+  --yellow-dark:#E6B800;
 
-  --radius-lg:18px;
-  --radius-md:12px;
-  --shadow:0 10px 30px rgba(0,0,0,.45);
-  --shadow-soft:0 6px 18px rgba(0,0,0,.35);
+  --radius:14px;
+  --shadow:0 15px 35px rgba(0,0,0,.55);
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--text);
   min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:
-    radial-gradient(circle at 30% 20%, rgba(80,120,255,.10), transparent 45%),
-    radial-gradient(circle at 70% 10%, rgba(34,197,94,.06), transparent 40%),
-    linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1) 55%, var(--bg-0) 100%);
-  display:flex;
-  flex-direction:column;
+    radial-gradient(circle at 30% 20%, rgba(255,204,0,.08), transparent 45%),
+    linear-gradient(180deg,var(--bg-2) 0%,var(--bg-1) 60%,var(--bg-0) 100%);
+  color:var(--text);
 }
 
-/* HEADER */
-
-.header{
-  height:72px;
-  background:rgba(6,10,24,.95);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 32px;
-}
-
-.logo{
-  font-weight:800;
-  font-size:22px;
-  letter-spacing:.5px;
-}
-
-.nav{
-  display:flex;
-  gap:28px;
-  align-items:center;
-}
-
-.nav a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:600;
-  font-size:15px;
-  transition:.2s;
-}
-
-.nav a:hover{
-  color:#fff;
-}
-
-.signup-btn{
-  height:40px;
-  padding:0 18px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  color:#06110A;
-  background:linear-gradient(180deg,var(--accent) 0%,var(--accent-2) 100%);
-  box-shadow:0 8px 16px rgba(34,197,94,.2);
-  transition:.2s;
-}
-
-.signup-btn:hover{
-  transform:translateY(-1px);
-}
-
-/* MAIN */
-
-.main{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:40px 20px;
-}
-
-.card{
-  width:min(560px,100%);
+.wrapper{
   background:var(--surface);
   border:1px solid var(--border);
-  border-radius:var(--radius-lg);
+  border-radius:18px;
+  padding:40px 50px;
   box-shadow:var(--shadow);
-  padding:32px;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(10px);
+  text-align:center;
 }
 
-.card h1{
-  margin:0 0 10px;
-  font-size:28px;
-  font-weight:800;
-}
-
-.card p{
-  margin:0 0 28px;
-  color:var(--muted);
-  font-weight:600;
-  line-height:1.5;
-}
-
-.actions{
+.buttons{
   display:flex;
-  gap:14px;
+  gap:16px;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .btn{
-  flex:1 1 220px;
-  height:50px;
+  min-width:220px;
+  height:54px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:var(--radius-md);
+  border-radius:var(--radius);
   font-weight:800;
+  letter-spacing:.5px;
   text-decoration:none;
-  transition:.2s;
-  letter-spacing:.3px;
+  transition:.2s ease;
 }
 
 .btn-primary{
-  color:#06110A;
-  background:linear-gradient(180deg,var(--accent) 0%,var(--accent-2) 100%);
-  box-shadow:0 10px 18px rgba(34,197,94,.18);
+  background:linear-gradient(180deg,var(--yellow) 0%,var(--yellow-dark) 100%);
+  color:#000;
+  box-shadow:0 10px 20px rgba(255,204,0,.25);
 }
 
 .btn-primary:hover{
   transform:translateY(-2px);
+  box-shadow:0 15px 30px rgba(255,204,0,.35);
 }
 
 .btn-secondary{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  color:var(--text);
+  background:transparent;
+  border:2px solid var(--yellow);
+  color:var(--yellow);
 }
 
 .btn-secondary:hover{
-  background:rgba(255,255,255,.1);
+  background:var(--yellow);
+  color:#000;
   transform:translateY(-2px);
 }
 
-/* FOOTER */
-
-.footer{
-  height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-top:1px solid var(--border);
-  background:rgba(6,10,24,.9);
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-  .nav{
-    display:none;
+@media(max-width:600px){
+  .wrapper{
+    padding:30px 20px;
   }
-
-  .header{
-    padding:0 20px;
-  }
-
-  .card{
-    padding:24px;
-  }
-
   .btn{
-    flex:1 1 100%;
+    width:100%;
   }
 }
-
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="logo">ADMIRAL<span style="color:#22C55E;">BET</span></div>
+<div class="wrapper">
+  <div class="buttons">
+    <a class="btn btn-primary" href="https://admiralbetbgaffiliates.com/partner/register">
+      REGISTRACIJA
+    </a>
 
-  <nav class="nav">
-    <a href="#">Casino</a>
-    <a href="#">Live Casino</a>
-    <a href="#">Sport</a>
-    <a href="#">Promotions</a>
-  </nav>
-
-  <a href="#" class="signup-btn">Sign Up</a>
-</header>
-
-<main class="main">
-  <div class="card">
-    <h1>Affiliate Portal</h1>
-    <p>Pristup partnerskom sistemu. Registruj se kao novi partner ili se prijavi na postojeći nalog.</p>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="https://admiralbetbgaffiliates.com/partner/register">
-        Registracija
-      </a>
-
-      <a class="btn btn-secondary" href="https://admiralbetbgaffiliates.com/partner/login">
-        Login
-      </a>
-    </div>
+    <a class="btn btn-secondary" href="https://admiralbetbgaffiliates.com/partner/login">
+      LOGIN
+    </a>
   </div>
-</main>
-
-<footer class="footer">
-  © 2026 AdmiralBet Affiliate Portal
-</footer>
+</div>
 
 </body>
 </html>
